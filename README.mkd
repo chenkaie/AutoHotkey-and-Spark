@@ -1,0 +1,3 @@
+*.ahk is for AutoHotkey (Win32)
+
+*.splx is for Spark (Mac OS X)
