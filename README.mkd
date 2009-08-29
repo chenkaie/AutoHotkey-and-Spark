@@ -4,11 +4,11 @@ ABOUT
  Both these tools are very useful and powerful. They strongly Enhance my PuTTY(Win32) & iTerm(Mac) usability.
  For example, I could use "Ctrl + Tab", "Shift + Tab" to move between buffers in Vim!
 
- AutoHotkey(Win32) - Free Mouse and Keyboard Macro Program with Hotkeys and AutoText
- http://www.autohotkey.com/
+ * AutoHotkey(Win32) - Free Mouse and Keyboard Macro Program with Hotkeys and AutoText
+ * http://www.autohotkey.com/
 
- Spark(Mac) is a powerful, and easy Shortcuts manager. 
- http://www.shadowlab.org/Software/spark
+ * Spark(Mac) is a powerful, and easy Shortcuts manager. 
+ * http://www.shadowlab.org/Software/spark
 
 Usage
 =====
@@ -24,7 +24,3 @@ Kent Chen (Kaie) <chenkaie@gmail.com>
 
 * [@chenkaie](http://www.plurk.com/chenkaie) on Plurk 
 * <http://chenkaie.blogspot.com>
-
-*.ahk is for AutoHotkey (Win32)
-
-*.splx is for Spark (Mac OS X)
