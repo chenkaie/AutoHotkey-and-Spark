@@ -14,7 +14,6 @@
 ; try out these hotkeys, run AutoHotkey again, which will load this file.
 
 #z::Run www.autohotkey.com
-
 ^!n::
 IfWinExist Mozilla Firefox
     WinActivate
@@ -66,6 +65,7 @@ getProgram(sTitle) {
 +Tab::SendInput :MBEbp{Enter}
 ^,::SendInput ^ap
 ^.::SendInput ^an
+; Home::SendInput +6
 
 ; Bind all
 #IfWinActive
@@ -74,9 +74,12 @@ getProgram(sTitle) {
 #f::Run Firefox
 #p::Run "D:\[Software]\PUTTY.exe"
 #i::Run "C:\Program Files\Internet Explorer\iexplore.exe"
+#+i::Run "C:\Program Files\Vivotek Inc\Installation Wizard 2\IW2.exe"
 #g::Run "C:\VimE\vim71\gvim.exe"
 #c::Run cmd
 #o::Run "C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE"  /recycle
 #v::Run "C:\Program Files\VideoLAN\VLC\vlc.exe" 
 #q::Run "C:\Program Files\QuickTime\QuickTimePlayer.exe"
+#m::Run "C:\Program Files\K-Lite Codec Pack\Media Player Classic\mplayerc.exe"
+#+d::Run http://www.google.com.tw/dictionary?langpair=en|zh-TW&q=%clipboard%&hl=zh-TW&aq=f
 #+c::Run Calc 
