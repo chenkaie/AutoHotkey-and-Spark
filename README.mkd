@@ -1,3 +1,26 @@
-*.ahk is for AutoHotkey (Win32)
+ABOUT
+=====
+ 
+ Both these tools are very useful and powerful. They strongly Enhance my PuTTY(Win32) & iTerm(Mac) usability.
+ For example, I could use "Ctrl + Tab", "Shift + Tab" to move between buffers in Vim!
 
-*.splx is for Spark (Mac OS X)
+ * AutoHotkey(Win32) - Free Mouse and Keyboard Macro Program with Hotkeys and AutoText
+ * http://www.autohotkey.com/
+
+ * Spark(Mac) is a powerful, and easy Shortcuts manager. 
+ * http://www.shadowlab.org/Software/spark
+
+Usage
+=====
+
+1. git clone this repos to your anywhere you want!
+
+2. Double click on the config file to load this script!
+
+AUTHOR
+======
+
+Kent Chen (Kaie) <chenkaie@gmail.com>
+
+* [@chenkaie](http://www.plurk.com/chenkaie) on Plurk 
+* <http://chenkaie.blogspot.com>
