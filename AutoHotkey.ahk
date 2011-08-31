@@ -38,7 +38,7 @@ getProgram(sTitle) {
   ;MsgBox %iPos%
   return %sProgram%
 }
-; Ctrl + Alt + n to get title
+; Ctrl + Alt + g to get title
 ^!g::
   WinGetTitle, sTitle, A
   sProgram := getProgram(sTitle)
@@ -55,21 +55,23 @@ getProgram(sTitle) {
 ; ForVIVOTEK. Only bind for PuTTY
 #IfWinActive ahk_class PuTTY
 #1::SendInput mount -t nfs -o tcp,nolock 172.16.5.31:/home /home 
-#2::SendInput mkdir /mnt/ramdisk/worksapce; mount -t nfs -o tcp,nolock 172.16.5.31:/workspace/kent /mnt/ramdisk/worksapce
-#3::SendInput mkdir /mnt/ramdisk/smb_rd1-2; smbmount //172.16.5.31/kent /mnt/ramdisk/smb_rd1-2 -o username=kent,rw
+#2::SendInput mount / -o remount,rw; mkdir /workspace; mount -t nfs -o tcp,nolock 172.16.5.31:/workspace /workspace
+#3::SendInput mkdir /mnt/flash/smb_rd1-2; smbmount //172.16.5.31/kent /mnt/flash/smb_rd1-2 -o username=kent,rw
 #4::SendInput facmode setfac; sysparam set macaddress 00:02:D1:78:22:01
 #5::SendInput mount / -o remount,rw
 #6::SendInput nand scrub 0x0 0x8000000
+#7::SendInput setenv serverip 172.16.2.54; setenv ipaddr 172.16.2.254; setenv netmask 255.255.0.0; setenv ethaddr 00:02:D1:11:22:33; saveenv
 ; for PuTTY -> VIm -> MiniBufExplorer
-^Tab::SendInput :MBEbn{Enter}
-+Tab::SendInput :MBEbp{Enter}
+; ^Tab::SendInput :MBEbn{Enter}
+; +Tab::SendInput :MBEbp{Enter}
 ^,::SendInput ^ap
 ^.::SendInput ^an
+; Capslock::SendInput {Escape}
 ; Home::SendInput +6
 
 ; Bind all
 #IfWinActive
-#a::Run C:\VimE\vim71\gvim.exe D:\MyDocuments\AutoHotkey.ahk
+#a::Run D:\Vim\vim71\gvim.exe D:\MyDocuments\AutoHotkey.ahk
 #r::reload
 #f::Run Firefox
 #p::Run "D:\[Software]\PUTTY.exe"
@@ -80,6 +82,8 @@ getProgram(sTitle) {
 #o::Run "C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE"  /recycle
 #v::Run "C:\Program Files\VideoLAN\VLC\vlc.exe" 
 #q::Run "C:\Program Files\QuickTime\QuickTimePlayer.exe"
-#m::Run "C:\Program Files\K-Lite Codec Pack\Media Player Classic\mplayerc.exe"
-#+d::Run http://www.google.com.tw/dictionary?langpair=en|zh-TW&q=%clipboard%&hl=zh-TW&aq=f
+#m::Run "C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe"
+;#+d::Run http://www.google.com.tw/dictionary?langpair=en|zh-TW&q=%clipboard%&hl=zh-TW&aq=f
+;#+d::Run http://translate.google.com/#en|zh-TW|%clipboard%
+#+d::Run http://tw.dictionary.yahoo.com/dictionary?p=%clipboard%
 #+c::Run Calc 
