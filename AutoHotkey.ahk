@@ -61,6 +61,12 @@ getProgram(sTitle) {
 #5::SendInput mount / -o remount,rw
 #6::SendInput nand scrub 0x0 0x8000000
 #7::SendInput setenv serverip 172.16.2.54; setenv ipaddr 172.16.2.254; setenv netmask 255.255.0.0; setenv ethaddr 00:02:D1:11:22:33; saveenv
+; Decrease PuTTY Font size
+^-::Send !{Space}g{Tab 6}{Down 7}{Tab 3}{Enter}{Tab 2}{Up}{Enter}{Tab}{Enter}
+; Increase PuTTY Font size
+Ctrl & +::Send !{Space}g{Tab 6}{Down 7}{Tab 3}{Enter}{Tab 2}{Down}{Enter}{Tab}{Enter}
+; Set Default PuTTY Font size: 12
+^0::Send !{Space}g{Tab 6}{Down 7}{Tab 3}{Enter}{Tab 2}12{Enter}{Tab}{Enter}
 ; for PuTTY -> VIm -> MiniBufExplorer
 ; ^Tab::SendInput :MBEbn{Enter}
 ; +Tab::SendInput :MBEbp{Enter}
