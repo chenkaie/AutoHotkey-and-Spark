@@ -48,6 +48,7 @@ getProgram(sTitle) {
 ; Docs : 1. http://www.autohotkey.com/docs/commands/
 ;        2. http://www.autohotkey.com/docs/Hotkeys.htm
 ;        3. http://www.autohotkey.com/docs/commands/Send.htm
+;        4. http://www.autohotkey.com/docs/commands/_EscapeChar.htm
 ; # : WinKey
 ; ! : Alt
 ; ^ : Control
@@ -78,19 +79,20 @@ Ctrl & +::Send !{Space}g+{Tab}Ap!n!S{Down}{Enter 2}
 
 ; Bind all
 #IfWinActive
-#a::Run D:\Vim\vim71\gvim.exe D:\MyDocuments\AutoHotkey.ahk
+#a::Run D:\Vim\vim71\gvim.exe C:\Users\kent.chen\Documents\AutoHotkey.ahk
 #r::reload
 #f::Run Firefox
 #p::Run "D:\[Software]\PUTTY.exe"
 #i::Run "C:\Program Files\Internet Explorer\iexplore.exe"
-#+i::Run "C:\Program Files\Vivotek Inc\Installation Wizard 2\IW2.exe"
-#g::Run "C:\VimE\vim71\gvim.exe"
+#+i::Run "C:\Program Files (x86)\VIVOTEK Inc\Installation Wizard 2\IW2.exe"
+#g::Run "D:\Vim\vim71\gvim.exe"
 #c::Run cmd
 #o::Run "C:\Program Files\Microsoft Office\OFFICE11\OUTLOOK.EXE"  /recycle
-#v::Run "C:\Program Files\VideoLAN\VLC\vlc.exe" 
-#q::Run "C:\Program Files\QuickTime\QuickTimePlayer.exe"
-#m::Run "C:\Program Files\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe"
+#v::Run "C:\Program Files (x86)\VideoLAN\VLC\vlc.exe"
+#q::Run "C:\Program Files (x86)\QuickTime\QuickTimePlayer.exe"
+#m::Run "C:\Program Files (x86)\K-Lite Codec Pack\Media Player Classic\mpc-hc.exe"
 ;#+d::Run http://www.google.com.tw/dictionary?langpair=en|zh-TW&q=%clipboard%&hl=zh-TW&aq=f
-;#+d::Run http://translate.google.com/#en|zh-TW|%clipboard%
-#+d::Run http://tw.dictionary.yahoo.com/dictionary?p=%clipboard%
-#+c::Run Calc 
+;#+d::Run http://www.google.com/search?hl=zh-TW&tbs=dfn`%3A1&q=%clipboard%
+#+d::Run http://translate.google.com/#en|zh-TW|%clipboard%
+#+y::Run http://tw.dictionary.yahoo.com/dictionary?p=%clipboard%
+#+c::Run Calc
