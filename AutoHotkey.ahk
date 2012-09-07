@@ -54,15 +54,24 @@ getProgram(sTitle) {
 ; ^ : Control
 ; + : Shift
 
+BetterSend(sInputStr) {
+    KeyWait, LWin         ; Wait for Left WinKey to be released,
+    SendInput %sInputStr% ; then do "SendInput" to fix "WinKey stuck down" issue under Win7
+    return
+}
+
 ; ForVIVOTEK. Only bind for PuTTY
 #IfWinActive ahk_class PuTTY
-#1::SendInput mount -t nfs -o tcp,nolock 172.16.5.31:/home /home 
-#2::SendInput mount / -o remount,rw; mkdir /workspace; mount -t nfs -o tcp,nolock 172.16.5.31:/workspace /workspace
-#3::SendInput mkdir /mnt/flash/smb_rd1-2; smbmount //172.16.5.31/kent /mnt/flash/smb_rd1-2 -o username=kent,rw
-#4::SendInput facmode setfac; sysparam set macaddress 00:02:D1:78:22:01
-#5::SendInput mount / -o remount,rw
-#6::SendInput nand scrub 0x0 0x8000000
-#7::SendInput setenv serverip 172.16.2.54; setenv ipaddr 172.16.2.254; setenv netmask 255.255.0.0; setenv ethaddr 00:02:D1:11:22:33; saveenv
+#1::BetterSend("mount -t nfs -o tcp,nolock 172.16.5.31:/home /home")
+#2::BetterSend("mount / -o remount,rw; mkdir /workspace; mount -t nfs -o tcp,nolock 172.16.5.31:/workspace /workspace")
+#3::BetterSend("mkdir /mnt/flash/smb_rd1-2; smbmount //172.16.5.31/kent /mnt/flash/smb_rd1-2 -o username=kent,rw")
+#4::BetterSend("facmode setfac; sysparam set macaddress 00:02:D1:78:22:01")
+#5::BetterSend("mount / -o remount,rw")
+#6::BetterSend("nand scrub 0x0 0x8000000")
+#7::BetterSend("setenv serverip 172.16.2.54; setenv ipaddr 172.16.2.254; setenv netmask 255.255.0.0; setenv ethaddr 00:02:D1:11:22:33; saveenv; reset")
+#8::BetterSend("rm /etc/mtab; mknod -m 644 /etc/mtab c 1 3; mkdir -p /home/kent; smbmount //172.16.5.31/kent /home/kent -o username=kent,ro")
+#9::BetterSend("killall ServiceMonitor; killall stream")
+#0::BetterSend("/home/kent/Repos/MyGitRepos/VIVOTEK_SDK_FOR_CISCO/Samples/sensor_app/sensor_app.out")
 ; Decrease PuTTY Font size
 ^-::Send !{Space}g+{Tab}Ap!n!S{Up}{Enter 2}
 ; Increase PuTTY Font size
