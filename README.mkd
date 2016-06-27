@@ -7,7 +7,7 @@ ABOUT
  * AutoHotkey(Win32) - Free Mouse and Keyboard Macro Program with Hotkeys and AutoText
  * http://www.autohotkey.com/
 
- * Spark(Mac) is a powerful, and easy Shortcuts manager. 
+ * Spark(Mac) is a powerful, and easy Shortcuts manager.
  * http://www.shadowlab.org/Software/spark
 
 Usage
@@ -22,5 +22,9 @@ AUTHOR
 
 Kent Chen (Kaie) <chenkaie@gmail.com>
 
-* [@chenkaie](http://www.plurk.com/chenkaie) on Plurk 
+* [@chenkaie](http://www.plurk.com/chenkaie) on Plurk
 * <http://chenkaie.blogspot.com>
+
+
+JIRA
+====
